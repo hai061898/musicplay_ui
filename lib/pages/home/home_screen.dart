@@ -65,8 +65,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    DetailPage(mMusic: music[index],)),
+                                builder: (context) => DetailScreen(
+                                      musics: music[index],
+                                    )),
                           );
                         },
                         // =>Get.to(DetailScreen(musics: music[index],)),
