@@ -34,7 +34,6 @@ class _DetailScreenState extends State<DetailScreen> {
         setState(() {
           isPlaying = true;
           btnIcon = Icons.pause;
-          //from now we hear song
         });
       }
     }
@@ -56,13 +55,13 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xFF03174C),
+      backgroundColor: kPrimary,
       body: Container(
         child: Center(
           child: Column(
             children: [
               Container(
-                height: 400.0,
+                height: 600.0,
                 child: Stack(
                   children: [
                     Container(
@@ -76,7 +75,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [kPrimary.withOpacity(0.4), kPrimary],
+                          colors: [Colors.white.withOpacity(0.4), Colors.white],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                         ),
@@ -146,8 +145,7 @@ class _DetailScreenState extends State<DetailScreen> {
               SizedBox(
                 height: 42.0,
               ),
-              Slider.adaptive(
-                //change value after 11 step, and add min and max
+              Slider.adaptive(            
                 value: position.inSeconds.toDouble(),
                 min: 0.0,
                 max: duration.inSeconds.toDouble(),
@@ -218,7 +216,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 58.0),
+              SizedBox(height: 20.0),
             ],
           ),
         ),
